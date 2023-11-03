@@ -1,0 +1,172 @@
+//package com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt' // Make sure this line is included for annotation processing
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    namespace 'com.example.DailyDiary'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary"
+        minSdk 21
+        targetSdk 33
+        versionCode 16
+        versionName "1.2"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "in_app", "ca-app-pub-9523585253393009~4375935726"
+
+            resValue "string", "admob_banner_id1", "ca-app-pub-9523585253393009/5471974090"
+            resValue "string", "admob_banner_id2", "ca-app-pub-9523585253393009/7906565747"
+            resValue "string", "admob_banner_id3", "ca-app-pub-9523585253393009/4542035803"
+            resValue "string", "admob_banner_id4", "ca-app-pub-9523585253393009/5663545786"
+            resValue "string", "admob_banner_id5", "ca-app-pub-9523585253393009/9352930239"
+
+            resValue "string", "admob_native_id1", "ca-app-pub-9523585253393009/1121665548"
+            resValue "string", "admob_native_id2", "ca-app-pub-9523585253393009/6652397665"
+            resValue "string", "admob_native_id3", "ca-app-pub-9523585253393009/1400070986"
+            resValue "string", "admob_native_id4", "ca-app-pub-9523585253393009/9086989316"
+            resValue "string", "admob_native_id5", "ca-app-pub-9523585253393009/1254948367"
+
+            resValue "string", "admob_intersitial_id1", "ca-app-pub-9523585253393009/3702762707"
+            resValue "string", "admob_intersitial_id2", "ca-app-pub-9523585253393009/7848276870"
+            resValue "string", "admob_intersitial_id3", "ca-app-pub-9523585253393009/8395071784"
+            resValue "string", "admob_intersitial_id4", "ca-app-pub-9523585253393009/8203500097"
+            resValue "string", "admob_intersitial_id5", "ca-app-pub-9523585253393009/1504808921"
+
+
+            firebaseCrashlytics {
+                mappingFileUploadEnabled true
+            }
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+
+            resValue "string", "in_app", "ca-app-pub-9523585253393009~4375935726"
+
+            resValue "string", "admob_banner_id1", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "admob_banner_id2", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "admob_banner_id3", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "admob_banner_id4", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "admob_banner_id5", "ca-app-pub-3940256099942544/6300978111"
+
+            resValue "string", "admob_native_id1", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "admob_native_id2", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "admob_native_id3", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "admob_native_id4", "ca-app-pub-3940256099942544/2247696110"
+            resValue "string", "admob_native_id5", "ca-app-pub-3940256099942544/2247696110"
+
+            resValue "string", "admob_intersitial_id1", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "admob_intersitial_id2", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "admob_intersitial_id3", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "admob_intersitial_id4", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "admob_intersitial_id5", "ca-app-pub-3940256099942544/1033173712"
+
+
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+    viewBinding {
+        enabled = true
+    }
+    kapt {
+        generateStubs = true
+    }
+
+}
+//apply plugin: "kotlin-kapt"
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation project(path: ':KamaiPro')
+
+    //Room DataBase
+    implementation 'androidx.room:room-runtime:2.5.1'
+    kapt 'androidx.room:room-compiler:2.5.1'
+    implementation "androidx.room:room-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.14.2'
+
+    // fingerprint
+    implementation 'androidx.biometric:biometric:1.1.0'
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:4.2.2'
+
+    // Declare the dependencies for the Remote Config and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    //localize
+    implementation('com.akexorcist:localization:1.2.11') {
+        exclude group: 'androidx.core', module: 'core'
+    }
+
+    // UICam
+    implementation 'com.uxcam:uxcam:3.6.2'
+
+
+}

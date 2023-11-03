@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Kamai</string>
+    <string name="image_description">null</string>
+    <string name="ad_is_loading">Loading Ad..</string>
+    <string name="premium_bannar_text"><b>12$/year</b> will be deducted while subscription. Subscription can be renewed automatically every year. You can cancel the subscription anytime from the Google Play Store.</string>
+    <string name="premium_cross_image">premium cross image</string>
+    <string name="premiun_no_add_icon">premiun no add icon</string>
+    <string name="premiun_offline_translation_icon">premiun offline translation icon</string>
+    <string name="premium_unlimited_ocr_icon">premium unlimited ocr icon</string>
+    <string name="unlimited_ocr_translation">Unlimited OCR Translation</string>
+    <string name="monthly">Monthly</string>
+    <string name="_6">6$</string>
+    <string name="for_month">For Month</string>
+    <string name="yearly">Yearly</string>
+    <string name="_12">12$</string>
+    <string name="for_yearly">For Yearly</string>
+    <string name="lifetime">Lifetime</string>
+    <string name="_24">24$</string>
+    <string name="for_a_lifetime">For a Lifetime</string>
+    <string name="subscribe_now">Subscribe Now</string>
+    <string name="no_ads">No Ads</string>
+    <string name="offline_translation">Offline Translation</string>
+    <string name="terms_amp_condition"><![CDATA[Terms & condition]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="IIIII">|</string>
+    <string name="topMenuIcon">topMenuIcon</string>
+    <string name="topBackButton">topBackButton</string>
+    <string name="photo_translator">Photo Translator</string>
+</resources>

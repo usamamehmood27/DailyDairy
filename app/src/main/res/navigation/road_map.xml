@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/road_map"
+    app:startDestination="@id/enterence_Fragment">
+
+    <activity
+        android:id="@+id/splashActivity"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.activities.SplashActivity"
+        android:label="activity_splash"
+        tools:layout="@layout/activity_splash" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_sildeMenuFragment"
+            app:destination="@id/sildeMenuFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_dairyPageFragment"
+            app:destination="@id/dairyPageFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_saveNotes_Fragment"
+            app:destination="@id/saveNotes_Fragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_folders_Fragment"
+            app:destination="@id/folders_Fragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_draft_Fragment"
+            app:destination="@id/draft_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sildeMenuFragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.SildeMenuFragment"
+        android:label="fragment_silde_menu"
+        tools:layout="@layout/fragment_silde_menu" >
+        <action
+            android:id="@+id/action_sildeMenuFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_sildeMenuFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_sildeMenuFragment_to_clanderFragment"
+            app:destination="@id/clanderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_lockFragment"
+            app:destination="@id/lockFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dairyPageFragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.DairyPageFragment"
+        android:label="fragment_dairy_page"
+        tools:layout="@layout/fragment_dairy_page" >
+        <action
+            android:id="@+id/action_dairyPageFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_dairyPageFragment_to_folder_Note_Fragment"
+            app:destination="@id/folder_Note_Fragment" />
+        <action
+            android:id="@+id/action_dairyPageFragment_to_saveNotes_Fragment"
+            app:destination="@id/saveNotes_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveNotes_Fragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.SaveNotes_Fragment"
+        android:label="fragment_save_notes_"
+        tools:layout="@layout/fragment_save_notes_" >
+        <action
+            android:id="@+id/action_saveNotes_Fragment_to_dairyPageFragment"
+            app:destination="@id/dairyPageFragment" />
+        <action
+            android:id="@+id/action_saveNotes_Fragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_saveNotes_Fragment_to_folder_Note_Fragment"
+            app:destination="@id/folder_Note_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/folders_Fragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.Folders_Fragment"
+        android:label="fragment_folders_"
+        tools:layout="@layout/fragment_folders_" >
+        <action
+            android:id="@+id/action_folders_Fragment_to_folder_Note_Fragment"
+            app:destination="@id/folder_Note_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/draft_Fragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.Draft_Fragment"
+        android:label="fragment_draft_"
+        tools:layout="@layout/fragment_draft_" >
+        <action
+            android:id="@+id/action_draft_Fragment_to_dairyPageFragment"
+            app:destination="@id/dairyPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lockFragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.LockFragment"
+        android:label="fragment_lock"
+        tools:layout="@layout/fragment_lock" >
+        <action
+            android:id="@+id/action_lockFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_lockFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_lockFragment_to_enterence_Fragment"
+            app:destination="@id/enterence_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/action_languageFragment_to_sildeMenuFragment"
+            app:destination="@id/sildeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clanderFragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.ClanderFragment"
+        android:label="fragment_clander"
+        tools:layout="@layout/fragment_clander" >
+        <action
+            android:id="@+id/action_clanderFragment_to_sildeMenuFragment"
+            app:destination="@id/sildeMenuFragment" />
+        <action
+            android:id="@+id/action_clanderFragment_to_dairyPageFragment"
+            app:destination="@id/dairyPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterence_Fragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.Enterence_Fragment"
+        android:label="fragment_enterence_"
+        tools:layout="@layout/fragment_enterence_" >
+        <action
+            android:id="@+id/action_enterence_Fragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_enterence_Fragment_to_lockFragment"
+            app:destination="@id/lockFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/folder_Note_Fragment"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.Folder_Note_Fragment"
+        android:label="fragment_folder__note_"
+        tools:layout="@layout/fragment_folder__note_" >
+        <action
+            android:id="@+id/action_folder_Note_Fragment_to_folders_Fragment"
+            app:destination="@id/folders_Fragment" />
+        <action
+            android:id="@+id/action_folder_Note_Fragment_to_saveNotes_Fragment"
+            app:destination="@id/saveNotes_Fragment" />
+        <action
+            android:id="@+id/action_folder_Note_Fragment_to_dairyPageFragment"
+            app:destination="@id/dairyPageFragment" />
+    </fragment>
+</navigation>

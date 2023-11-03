@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "251375533632",
+    "project_id": "my-dairy-lock",
+    "storage_bucket": "my-dairy-lock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251375533632:android:d0dee89f64cc83e647a9a5",
+        "android_client_info": {
+          "package_name": "com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251375533632-9m59s2e2i9tjfp8hmoid4idfuhnt87ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwfMl09tlzPePu7iTXc0l7bDx1lPz3kgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251375533632-9m59s2e2i9tjfp8hmoid4idfuhnt87ml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

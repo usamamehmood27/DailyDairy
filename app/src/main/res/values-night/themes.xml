@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DailyDairy" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor">@color/main_color</item>
+    </style>
+    <style name="CustomCheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_selector</item>
+    </style>
+    <style name="Theme.DailyDairy" parent="Base.Theme.DailyDairy">
+        <item name="android:checkboxStyle">@style/CustomCheckBoxStyle</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="Custm_Dialod_Save" parent="Theme.AppCompat.Light.Dialog.Alert"/>
+
+</resources>

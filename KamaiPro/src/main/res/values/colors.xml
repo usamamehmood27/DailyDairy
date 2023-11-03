@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#3065FF</color>
+    <color name="btnBgggg">#059C72</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="gray">#707070</color>
+    <color name="gray_dark">#474747</color>
+    <color name="gray_light">#DADADA</color>
+    <color name="red">#FB0505</color>
+
+</resources>

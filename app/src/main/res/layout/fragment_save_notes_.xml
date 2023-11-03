@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splashbackgroung"
+   >
+    <LinearLayout
+        android:id="@+id/nofolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/no_folder"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_saved_file_here"
+            android:textSize="7pt"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/savetoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backpress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quicksand_bold"
+            android:gravity="center"
+            android:layout_marginStart="3dp"
+            android:text="@string/saved"
+            android:textColor="@color/white"
+            android:textSize="9pt"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backpress" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    <SearchView-->
+    <!--        android:id="@+id/searchView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:iconifiedByDefault="false"-->
+    <!--        android:queryBackground="@android:color/transparent"-->
+    <!--        android:queryHint="Search in your diary"-->
+    <!--        android:background="@drawable/search_background"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/savetoolbar" />-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView8"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:text="Your Notes"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="8pt"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:fontFamily="@font/quicksand"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/searchView" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/reverse"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:src="@drawable/suffle"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/searchView" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/saverecycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savetoolbar" />
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/searchrecycle"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:visibility="gone"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:background="@drawable/search_background"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/searchView" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

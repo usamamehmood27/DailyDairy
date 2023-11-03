@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    tools:ignore="UnusedAttribute">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:contentDescription="@string/premium_cross_image"
+        android:padding="3dp"
+        android:visibility="gone"
+        android:src="@drawable/banner_cross"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/premium_inside"
+        android:elevation="3dp"
+        android:padding="20dp"
+        android:translationZ="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/yearlyText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imgNoAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/premiun_no_add_icon"
+            android:src="@drawable/no_ads"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/no_ads"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgNoAd"
+            app:layout_constraintStart_toEndOf="@+id/imgNoAd"
+            app:layout_constraintTop_toTopOf="@+id/imgNoAd" />
+
+        <ImageView
+            android:id="@+id/noWifiIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/premiun_offline_translation_icon"
+            android:src="@drawable/offline_translate"
+            app:layout_constraintStart_toStartOf="@id/imgNoAd"
+            app:layout_constraintTop_toBottomOf="@+id/imgNoAd" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/offline_translation"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/noWifiIcon"
+            app:layout_constraintStart_toEndOf="@+id/noWifiIcon"
+            app:layout_constraintTop_toTopOf="@+id/noWifiIcon" />
+
+        <ImageView
+            android:id="@+id/unLimitOcr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/premium_unlimited_ocr_icon"
+            android:src="@drawable/unlimited_ocr_translation"
+            app:layout_constraintStart_toStartOf="@+id/noWifiIcon"
+            app:layout_constraintTop_toBottomOf="@+id/noWifiIcon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/unlimited_ocr_translation"
+            android:textColor="@color/white"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="9sp"
+            android:autoSizeMaxTextSize="18sp"
+            android:maxLines="1"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/unLimitOcr"
+            app:layout_constraintStart_toEndOf="@+id/unLimitOcr"
+            app:layout_constraintTop_toTopOf="@+id/unLimitOcr" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/yearlyText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:autoSizeMaxTextSize="12sp"
+        android:autoSizeMinTextSize="9sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="center"
+        android:lineHeight="20sp"
+        android:text="@string/premium_bannar_text"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/monthly"
+        app:layout_constraintEnd_toEndOf="@+id/lifeTime"
+        app:layout_constraintStart_toStartOf="@+id/monthly"
+         />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/monthly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/premium_select_package_with_color"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/subscribe"
+        app:layout_constraintEnd_toStartOf="@+id/yearly"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/monthly"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/_6"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t1" />
+
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/for_month"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/yearly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/premium_select_package"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/monthly"
+        app:layout_constraintEnd_toStartOf="@+id/lifeTime"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/monthly"
+        app:layout_constraintTop_toTopOf="@+id/monthly">
+
+        <TextView
+            android:id="@+id/tt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/yearly"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/_12"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tt1" />
+
+        <TextView
+            android:id="@+id/tt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/for_yearly"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tt2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lifeTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/premium_select_package_with_color"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/yearly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/yearly"
+        app:layout_constraintTop_toTopOf="@+id/yearly">
+
+        <TextView
+            android:id="@+id/ttt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/lifetime"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ttt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/_24"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ttt1" />
+
+        <TextView
+            android:id="@+id/ttt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/for_a_lifetime"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ttt2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/subscribe"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/btn_shape"
+        android:text="@string/subscribe_now"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/termsAndCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="3dp"
+            android:text="@string/terms_amp_condition"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/IIIII"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/privacyPolicy"
+            app:layout_constraintStart_toEndOf="@+id/termsAndCondition"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/privacyPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="3dp"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

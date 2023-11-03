@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main_color">#CA0068</color>
+    <color name="textcolor_main">#CA0068</color>
+
+
+    <color name="customCalendarSelectedDateColor">#6F4939</color>
+    <color name="customCalendarFocusedMonthColor">#0000FF</color>
+    <color name="customCalendarUnfocusedMonthColor">#6F4939</color>
+    <color name="customCalendarWeekNumberColor">#00FF00</color>
+    <color name="customCalendarDateColor">#000000</color>
+    <color name="customCalendarWeekDayColor">#6F4939</color>
+</resources>
