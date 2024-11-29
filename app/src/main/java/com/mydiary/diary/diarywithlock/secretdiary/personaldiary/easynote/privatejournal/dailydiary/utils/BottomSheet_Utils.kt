@@ -17,7 +17,6 @@ import com.example.DailyDiary.databinding.StikerBottomsheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.adapter.Background_Apater
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.FontData
-import kamai.app.ads.AdsManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -51,11 +50,9 @@ class BottomSheet_Utils {
 
                 }
                 apply.setOnClickListener {
-                    AdsManager.showIntersWithClick(context) {
                         binding.mainlayout.setBackgroundResource(backgroundid)
                         click.invoke(backgroundid)
                         bottomSheetDialog.dismiss()
-                    }
 
                 }
                 gradiant.setOnClickListener {
@@ -194,10 +191,9 @@ class BottomSheet_Utils {
                 }
 
                 apply.setOnClickListener {
-                    AdsManager.showIntersWithClick(context) {
                         click.invoke(FontData(fontid, fontsize, fontposition))
                         bottomSheetDialog.dismiss()
-                    }
+
 
                 }
             }
@@ -271,11 +267,10 @@ class BottomSheet_Utils {
                         }
                 }
                 apply.setOnClickListener {
-                    AdsManager.showIntersWithClick(context) {
                         stikerid = number
                         click.invoke(stikerid)
                         bottomSheetDialog.dismiss()
-                    }
+
 
                 }
             }

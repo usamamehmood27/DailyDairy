@@ -18,7 +18,6 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.setDailyAlarm
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.showTimePickerDialog
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.showToast
-import kamai.app.ads.AdsManager
 
 class SettingFragment : Fragment() {
     lateinit var binding: FragmentSettingBinding
@@ -37,12 +36,10 @@ class SettingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         util.logAnalytic(requireContext(), "setting_land")
-        AdsManager.showNativeAd(requireActivity(),binding.nativeAd,"SettingFragment")
         binding.apply {
             CheckSharedPref(requireActivity(),binding)
             lockselect.setOnClickListener {
                 util.logAnalytic(requireContext(), "set_dairy_lock")
-                AdsManager.showIntersWithClick(requireActivity()){
                     SharedPref.putBolean("resetpin",false)
                     if (!SharedPref.getBolean("lock", false)) {
                         lockselect.setImageResource(R.drawable.unselect)
@@ -53,7 +50,7 @@ class SettingFragment : Fragment() {
                         lockselect.setImageResource(R.drawable.sellect)
                         SharedPref.putBolean("lock", false)
                     }
-                }
+
             }
 //            clocksellect.setOnClickListener {
 //                if (!SharedPref.getBolean("setalaram", false)) {
@@ -94,7 +91,6 @@ class SettingFragment : Fragment() {
                 }
             }
             backpress.setOnClickListener {
-                AdsManager.countInterstitialCapping(requireActivity())
                 requireActivity().onBackPressed()
             }
         }

@@ -3,13 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/road_map"
-    app:startDestination="@id/enterence_Fragment">
+    app:startDestination="@id/fragmentSplash">
 
-    <activity
-        android:id="@+id/splashActivity"
-        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.activities.SplashActivity"
-        android:label="activity_splash"
-        tools:layout="@layout/activity_splash" />
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.DashboardFragment"
@@ -165,5 +160,14 @@
         <action
             android:id="@+id/action_folder_Note_Fragment_to_dairyPageFragment"
             app:destination="@id/dairyPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSplash"
+        android:name="com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.FragmentSplash"
+        android:label="FragmentSplash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_fragmentSplash_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
     </fragment>
 </navigation>

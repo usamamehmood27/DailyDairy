@@ -15,7 +15,7 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.GalleryFolder
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.Dialog_Utils
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.Notes_ViewModel
-import kamai.app.ads.AdsManager
+//import kamai.app.ads.AdsManager
 import java.io.File
 import java.lang.StringBuilder
 

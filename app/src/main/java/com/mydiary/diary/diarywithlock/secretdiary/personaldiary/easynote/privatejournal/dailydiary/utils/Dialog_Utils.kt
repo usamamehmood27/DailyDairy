@@ -43,8 +43,7 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.Notes
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.showToast
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.Notes_ViewModel
-import kamai.app.ads.AdmobManager
-import kamai.app.ads.AdsManager
+
 import java.io.File
 import java.io.IOException
 import kotlin.system.exitProcess
@@ -122,13 +121,12 @@ class Dialog_Utils {
                 }
 
                 delete.setOnClickListener {
-                    AdsManager.showIntersWithClick(context) {
                         viemodel.deletefolder(Folder(folder.id, folder.name))
                         click.invoke(position)
                         showToast(context, "Folder Deleted")
 
                         dialog.dismiss()
-                    }
+
                 }
 
             }
@@ -182,7 +180,6 @@ class Dialog_Utils {
                 }
 
                 delete.setOnClickListener {
-                    AdsManager.showIntersWithClick(context) {
                         if (currentItem is Draftdataclass) {
                             viemodel.deletedraftNotes(currentItem.id)
                             list.removeAt(position)
@@ -198,7 +195,7 @@ class Dialog_Utils {
                         }
 
                         dialog.dismiss()
-                    }
+
 
 
                 }
@@ -313,7 +310,6 @@ class Dialog_Utils {
             dialogueBinding.apply {
                 galleryrecycle.layoutManager = GridLayoutManager(context, 3)
                 galleryrecycle.setHasFixedSize(true)
-                AdmobManager.loadBannerAd1(context,bannerAd)
                 galleryrecycle.adapter = Background_Apater(context, list) { background, file ->
                     imagepath = file
                     next.setBackgroundResource(R.drawable.menu_button)
@@ -359,17 +355,15 @@ class Dialog_Utils {
                     }
                 }
                 cancel.setOnClickListener {
-                    AdsManager.showIntersWithClick(context) {
                         imagepath = ""
                         dialog.dismiss()
-                    }
+
                 }
                 next.setOnClickListener {
                     if (!imagepath.isNullOrEmpty())
-                        AdsManager.showIntersWithClick(context) {
                             click.invoke(imagepath)
                             dialog.dismiss()
-                        }
+
 
                 }
             }
@@ -545,11 +539,11 @@ class Dialog_Utils {
 
                 }
                 create.setOnClickListener {
-                    AdsManager.showIntersWithClick(context) {
+//
                         viemodel.updatefolder(Folder(folder.id, editText.text.toString()))
                         click.invoke()
                         dialog.dismiss()
-                    }
+
                 }
 
             }
@@ -566,7 +560,6 @@ class Dialog_Utils {
 
             dialog.setContentView(dialogueBinding.root)
             dialogueBinding.apply {
-                AdsManager.showSmallNative(context,nativeAddialog,"exitDialog")
                 no.setOnClickListener {
                     util.logAnalytic(context, "not_now")
                     dialog.dismiss()

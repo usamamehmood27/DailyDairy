@@ -55,8 +55,8 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.setAnimation
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.showToast
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.Notes_ViewModel
-import kamai.app.ads.AdmobManager
-import kamai.app.ads.AdsManager
+//import kamai.app.ads.AdmobManager
+//import kamai.app.ads.AdsManager
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -107,7 +107,7 @@ class DairyPageFragment : Fragment(), Onbackpress {
                 allAreGranted = allAreGranted && b
             }
             if (allAreGranted) {
-                AdsManager.showIntersWithClick(requireActivity()) {
+
                     imagelist = getImagesByBucket(requireActivity())
                     GalleryDialog(requireActivity(), imagelist, viemodel) {
                         if (it != "") {
@@ -120,7 +120,6 @@ class DairyPageFragment : Fragment(), Onbackpress {
                             binding.noteimage.setImageURI(Uri.parse(imagepath))
                         }
                     }
-                }
             } else {
                 showToast(requireActivity(), "Permission Denied")
             }
@@ -177,7 +176,7 @@ class DairyPageFragment : Fragment(), Onbackpress {
             gradiantlist = it
         }
         binding.apply {
-            AdmobManager.loadBannerAd1(requireActivity(), bannerAd)
+//            AdmobManager.loadBannerAd1(requireActivity(), bannerAd)
 
             viemodel.onenote.observe(viewLifecycleOwner) {
                 if (checkingState == "SavedNotes" || checkingState == "FolderNotes") {
@@ -443,7 +442,7 @@ class DairyPageFragment : Fragment(), Onbackpress {
                         Manifest.permission.READ_EXTERNAL_STORAGE
                     ) == PackageManager.PERMISSION_GRANTED
                 ) {
-                    AdsManager.showIntersWithClick(requireActivity()) {
+
 
                         imagelist = getImagesByBucket(requireActivity())
                         GalleryDialog(requireActivity(), imagelist, viemodel) {
@@ -457,7 +456,7 @@ class DairyPageFragment : Fragment(), Onbackpress {
                                 noteimage.setImageURI(Uri.parse(imagepath))
                             }
                         }
-                    }
+
                 } else {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
                         activityResultLauncher.launch(
@@ -612,7 +611,6 @@ class DairyPageFragment : Fragment(), Onbackpress {
                     editview.visibility = View.GONE
             }
             cancel.setOnClickListener {
-                AdsManager.countInterstitialCapping(requireActivity())
                 if (gliterstate) {
                     scrollView.isScrollingEnabled=true
                     cleardrawing()
@@ -622,7 +620,6 @@ class DairyPageFragment : Fragment(), Onbackpress {
             }
             save.setOnClickListener {
                 util.logAnalytic(requireContext(), "WYD_svd_click")
-                AdsManager.showIntersWithClick(requireActivity()) {
                     if (checkingState == "CreateNote" || checkingState == "DraftNotes") {
                         if (gliterstate) {
                             saveGliter("Save")
@@ -732,7 +729,7 @@ class DairyPageFragment : Fragment(), Onbackpress {
                         }
                     }
 
-                }
+
             }
         }
 
@@ -821,7 +818,7 @@ class DairyPageFragment : Fragment(), Onbackpress {
             }
 
             save.setOnClickListener {
-                AdsManager.showIntersWithClick(requireActivity()) {
+
                     viemodel.adddraftNote(
                         Draftdataclass(
                             0,
@@ -849,7 +846,7 @@ class DairyPageFragment : Fragment(), Onbackpress {
                     )
                     controller.navigate(R.id.action_dairyPageFragment_to_dashboardFragment)
                     dialog.dismiss()
-                }
+
             }
 
         }

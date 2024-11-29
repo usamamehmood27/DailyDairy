@@ -18,20 +18,14 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.alarmCallBack
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.back
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.enterenceback
-import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.logAnalytic
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.showToast
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.splashcallback
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.MainViewModelFactory
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.NotesRepository
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.Notes_ViewModel
-import kamai.app.ads.AdsHelper
-import kamai.app.ads.AdsManager
-import kamai.app.interfaces.IEventListener
-import kamai.app.interfaces.IUpdateListener
-import kamai.app.update.InAppUpdate
 
-class MainActivity :  LocalizationActivity(), Alarm_Alert, SplashAd, IEventListener,
-    IUpdateListener {
+
+class MainActivity :  LocalizationActivity(), Alarm_Alert, SplashAd {
     lateinit var viewmodel:Notes_ViewModel
     companion object{
         lateinit var  noteRepository:NotesRepository
@@ -40,10 +34,10 @@ class MainActivity :  LocalizationActivity(), Alarm_Alert, SplashAd, IEventListe
     val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-    val contoller by lazy {
-        val navhostFragemnt =
+    val controller by lazy {
+        val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        navhostFragemnt.navController
+        navHostFragment.navController
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,29 +45,29 @@ class MainActivity :  LocalizationActivity(), Alarm_Alert, SplashAd, IEventListe
         setContentView(binding.root)
         alarmCallBack=this
         splashcallback=this
-        AdsHelper.eventListener = this
-
-        checkForUpdates()
+//        AdsHelper.eventListener = this
+//
+//        checkForUpdates()
 
         setUpViewModel()
-        contoller.addOnDestinationChangedListener() { controller, destination, arguments ->
+        controller.addOnDestinationChangedListener { controller, destination, arguments ->
             Handler(Looper.getMainLooper()).postDelayed({
-                AdsManager.showInterstitialOnBack(this) {
+//                AdsManager.showInterstitialOnBack(this)
+                {
                 }
             }, 250)
         }
     }
 
-  fun checkForUpdates() {
-      InAppUpdate.init(this)
-      InAppUpdate.registerListener(this)
-      InAppUpdate.checkAppUpdate(this)
-    }
+//    fun checkForUpdates() {
+//        InAppUpdate.init(this)
+//        InAppUpdate.registerListener(this)
+//        InAppUpdate.checkAppUpdate(this)
+//    }
 
     private fun setUpViewModel() {
-         noteRepository = NotesRepository(
-            NotesDatabase(this)
-        )
+        noteRepository = NotesRepository(
+            NotesDatabase(this))
 
         val MainviewModelFactory =
             MainViewModelFactory(
@@ -86,53 +80,53 @@ class MainActivity :  LocalizationActivity(), Alarm_Alert, SplashAd, IEventListe
         )[Notes_ViewModel::class.java]
     }
     override fun onBackPressed() {
-        if (contoller.currentDestination!!.id==R.id.dashboardFragment){
+        if (controller.currentDestination!!.id==R.id.dashboardFragment){
             exitDialog(this)
-        }else if (contoller.currentDestination!!.id==R.id.dairyPageFragment){
+        }else if (controller.currentDestination!!.id==R.id.dairyPageFragment){
             if (checkingState=="CreateNote"){
                 back.click()
-                AdsManager.countInterstitialCapping(this)
+//                AdsManager.countInterstitialCapping(this)
             }
             else{
-                AdsManager.countInterstitialCapping(this)
+//                AdsManager.countInterstitialCapping(this)
                 super.onBackPressed()
             }
         }
-        else if (contoller.currentDestination!!.id==R.id.lockFragment){
+        else if (controller.currentDestination!!.id==R.id.lockFragment){
             SharedPref.putString("password","")
             SharedPref.putBolean("lock", false)
-            AdsManager.countInterstitialCapping(this)
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.saveNotes_Fragment){
-            AdsManager.countInterstitialCapping(this)
+        else if (controller.currentDestination!!.id==R.id.saveNotes_Fragment){
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.clanderFragment){
-            AdsManager.countInterstitialCapping(this)
+        else if (controller.currentDestination!!.id==R.id.clanderFragment){
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.settingFragment){
-            AdsManager.countInterstitialCapping(this)
+        else if (controller.currentDestination!!.id==R.id.settingFragment){
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.draft_Fragment){
-            AdsManager.countInterstitialCapping(this)
+        else if (controller.currentDestination!!.id==R.id.draft_Fragment){
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.folders_Fragment){
-            AdsManager.countInterstitialCapping(this)
+        else if (controller.currentDestination!!.id==R.id.folders_Fragment){
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.languageFragment){
-            AdsManager.countInterstitialCapping(this)
+        else if (controller.currentDestination!!.id==R.id.languageFragment){
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.sildeMenuFragment){
-            AdsManager.countInterstitialCapping(this)
+        else if (controller.currentDestination!!.id==R.id.sildeMenuFragment){
+//            AdsManager.countInterstitialCapping(this)
             super.onBackPressed()
         }
-        else if (contoller.currentDestination!!.id==R.id.enterence_Fragment){
+        else if (controller.currentDestination!!.id==R.id.enterence_Fragment){
             enterenceback.onBack()
         }
         else{
@@ -148,17 +142,18 @@ class MainActivity :  LocalizationActivity(), Alarm_Alert, SplashAd, IEventListe
 
     override fun onClick() {
         Handler(Looper.getMainLooper()).postDelayed({
-            AdsManager.showSplashInterstitial(this) {
-                InAppUpdate.checkAppUpdate(this) {}
-            }
+//            AdsManager.showSplashInterstitial(this) {
+//                InAppUpdate.checkAppUpdate(this) {}
+//            }
         }, 250)
     }
 
-    override fun onAdEvent(eventName: String) {
-        logAnalytic(this@MainActivity, eventName)
-    }
-
-    override fun updateDownloaded() {
-        InAppUpdate.showUserConsentDialog(this@MainActivity, binding.root)
-    }
+//
+//    override fun onAdEvent(eventName: String) {
+//        logAnalytic(this@MainActivity, eventName)
+//    }
+//
+//    override fun updateDownloaded() {
+//        InAppUpdate.showUserConsentDialog(this@MainActivity, binding.root)
+//    }
 }

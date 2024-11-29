@@ -29,6 +29,9 @@
 -keepclassmembers class  com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.LanguageFragment {
     public void listOfCountries(java.util.List);
 }
+-keep public class com.google.android.gms.** { public protected *; }
+-keep class com.google.android.gms.ads.identifier.** { *; }
+-keep class kamai.app.models.AdData { *; }
 
 #-keepclassmembers class **.R$* {
 #    public static <fields>;
@@ -81,6 +84,18 @@
 -dontwarn org.openjsse.javax.net.ssl.SSLParameters
 -dontwarn org.openjsse.javax.net.ssl.SSLSocket
 -dontwarn org.openjsse.net.ssl.OpenJSSE
+-dontwarn kamai.app.ads.AdmobManager$Companion
+-dontwarn kamai.app.ads.AdmobManager
+-dontwarn kamai.app.ads.AdsHelper$Companion
+-dontwarn kamai.app.ads.AdsHelper
+-dontwarn kamai.app.ads.AdsManager$Companion
+-dontwarn kamai.app.ads.AdsManager
+-dontwarn kamai.app.interfaces.IAdListener
+-dontwarn kamai.app.interfaces.IEventListener
+-dontwarn kamai.app.interfaces.IUpdateListener
+-dontwarn kamai.app.models.AdData
+-dontwarn kamai.app.update.InAppUpdate$Companion
+-dontwarn kamai.app.update.InAppUpdate
 #
 #
 #

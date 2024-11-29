@@ -27,8 +27,7 @@ import com.example.DailyDiary.databinding.FragmentLockBinding
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.classes.SharedPref
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.Dialog_Utils.Companion.changepasswordmethod
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.Dialog_Utils.Companion.confirmdialog
-import kamai.app.ads.AdmobManager
-import kamai.app.ads.AdsManager
+
 import java.util.concurrent.Executor
 
 class LockFragment : Fragment() {
@@ -99,7 +98,6 @@ class LockFragment : Fragment() {
         if (!SharedPref.getBolean("resetpin", true))
             differentMethods(requireContext())
         binding.apply {
-            AdmobManager.loadBannerAd1(requireActivity(),binding.bannerAd)
 
             fingerButton.setOnClickListener {
                 biometricPrompt.authenticate(promptInfo)

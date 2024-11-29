@@ -15,7 +15,7 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments.SaveNotes_Fragment.Companion.checkingState
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.showToast
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.Notes_ViewModel
-import kamai.app.ads.AdsManager
+//import kamai.app.ads.AdsManager
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -49,9 +49,9 @@ class ClanderFragment : Fragment() {
             viewmodel.searchNotesByDate(dateFormat)
             completedate.text = StringBuilder("$dayName,$dateString")
             backpress.setOnClickListener {
-                AdsManager.showInterstitialWithClick(requireActivity()) {
-                    requireActivity().onBackPressed()
-                }
+//                AdsManager.showInterstitialWithClick(requireActivity()) {
+//                    requireActivity().onBackPressed()
+//                }
             }
             viewmodel.calanderlist.observe(viewLifecycleOwner) { list ->
                 if (list.size >= 1)

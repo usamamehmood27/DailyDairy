@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.DailyDiary.R
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.Draftdataclass
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.Notes
-import kamai.app.ads.AdsManager
+//import kamai.app.ads.AdsManager
 
 class SearchAdapter (val context: Activity, val list: MutableList<Any>, val click: (Notes) -> Unit) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -68,7 +68,7 @@ class SearchAdapter (val context: Activity, val list: MutableList<Any>, val clic
             holder as AdsPagesViewHolder
             val currentItem = list[position]
             currentItem as String
-            AdsManager.showNativeAd(context,holder.Adscontainer,"SearchAdaptor")
+//            AdsManager.showNativeAd(context,holder.Adscontainer,"SearchAdaptor")
         }
     }
     override fun getItemViewType(position: Int): Int {

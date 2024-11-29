@@ -26,8 +26,6 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.back
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util.Companion.showToast
-import kamai.app.ads.AdmobManager
-import kamai.app.ads.AdsManager
 import java.util.concurrent.Executor
 
 
@@ -85,7 +83,7 @@ class Enterence_Fragment : Fragment(), EnterenceBack {
             start()
         }
         binding.apply {
-            AdmobManager.loadBannerAd1(requireActivity(),binding.bannerAd)
+
             fingerButton.setOnClickListener {
                 biometricPrompt.authenticate(promptInfo)
             }

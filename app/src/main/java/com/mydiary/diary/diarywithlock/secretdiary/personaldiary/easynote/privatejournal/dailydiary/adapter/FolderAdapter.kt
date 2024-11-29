@@ -14,7 +14,7 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.GalleryFolder
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.Dialog_Utils.Companion.deleteFolder
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.Notes_ViewModel
-import kamai.app.ads.AdsManager
+//import kamai.app.ads.AdsManager
 import java.io.File
 
 class FolderAdapter(var context: Activity,var viewModel: Notes_ViewModel,var list: MutableList<Any>,var click:(String,Folder)->Unit):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -101,7 +101,7 @@ class FolderAdapter(var context: Activity,var viewModel: Notes_ViewModel,var lis
             holder as AdsPagesViewHolder
             val currentItem = list[position]
             currentItem as String
-            AdsManager.showNativeAd(context,holder.Adscontainer,"FolderAdapter")
+//            AdsManager.showNativeAd(context,holder.Adscontainer,"FolderAdapter")
         }
     }
     override fun getItemViewType(position: Int): Int {

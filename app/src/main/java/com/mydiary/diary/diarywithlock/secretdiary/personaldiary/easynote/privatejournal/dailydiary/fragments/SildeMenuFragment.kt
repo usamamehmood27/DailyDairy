@@ -12,8 +12,7 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.Dialog_Utils.Companion.rateusDialog
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.Dialog_Utils.Companion.showDialogPrivacyPOlicy
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.utils.util
-import kamai.app.ads.AdmobManager
-import kamai.app.ads.AdsManager
+
 
 class SildeMenuFragment : Fragment() {
     lateinit var binding: FragmentSildeMenuBinding
@@ -31,13 +30,11 @@ class SildeMenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        AdsManager.showNativeAd(requireActivity(),binding.nativead,"SildeMenuFragment")
         binding.apply {
             settings.setOnClickListener {
                 util.logAnalytic(requireContext(), "setting_click")
-                AdsManager.showIntersWithClick(requireActivity()){
                     controller.navigate(R.id.action_sildeMenuFragment_to_settingFragment)
-                }
+
             }
 
             exit.setOnClickListener {
@@ -53,10 +50,9 @@ class SildeMenuFragment : Fragment() {
             }
             language.setOnClickListener {
                 util.logAnalytic(requireContext(), "Applanguages_click")
-                AdsManager.showIntersWithClick(requireActivity()){
                     controller.navigate(R.id.action_sildeMenuFragment_to_languageFragment)
 
-                }
+
             }
 //            calender.setOnClickListener {
 //                AdsManager.showIntersWithClick(requireActivity()){
@@ -64,7 +60,6 @@ class SildeMenuFragment : Fragment() {
 //                }
 //            }
             backpress.setOnClickListener {
-                AdsManager.countInterstitialCapping(requireActivity())
                 requireActivity().onBackPressed()
             }
 

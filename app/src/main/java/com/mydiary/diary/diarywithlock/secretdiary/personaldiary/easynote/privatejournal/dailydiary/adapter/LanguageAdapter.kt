@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.DailyDiary.R
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.classes.SharedPref
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.ModelClasLanguges
-import kamai.app.ads.AdsManager
-
+//import kamai.app.ads.AdsManager
+//
 class LanguageAdapter(
     val context: Activity? = null,
     val listLang: List<Any>? = null,
@@ -57,10 +57,10 @@ class LanguageAdapter(
 
         } else {
             holder as AdsViewHolder
-            AdsManager.showNativeAd(
-                context!!,
-                holder.frameLayout_native, "LanguageAdapter"
-            )
+//            AdsManager.showNativeAd(
+//                context!!,
+//                holder.frameLayout_native, "LanguageAdapter"
+//            )
 
         }
     }

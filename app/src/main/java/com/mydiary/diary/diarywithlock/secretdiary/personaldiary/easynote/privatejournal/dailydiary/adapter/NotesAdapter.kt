@@ -16,7 +16,7 @@ import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privat
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.Folder
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.dataclasses.Notes
 import com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.viewmodel.Notes_ViewModel
-import kamai.app.ads.AdsManager
+//import kamai.app.ads.AdsManager
 
 class NotesAdapter(val context: Activity, val list: MutableList<Any>,var viewModel: Notes_ViewModel, val click: (Notes,Draftdataclass,String,Int) -> Unit) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -154,7 +154,7 @@ class NotesAdapter(val context: Activity, val list: MutableList<Any>,var viewMod
         }else if(getItemViewType(position)==1){
             holder as AdsPagesViewHolder
             currentItem as String
-            AdsManager.showNativeAd(context,holder.Adscontainer,"NotesAdapter")
+//            AdsManager.showNativeAd(context,holder.Adscontainer,"NotesAdapter")
         }
     }
 

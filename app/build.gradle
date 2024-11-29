@@ -1,12 +1,10 @@
-//package com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary.fragments
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'com.google.firebase.crashlytics'
     id 'kotlin-android'
-    id 'kotlin-kapt' // Make sure this line is included for annotation processing
+    id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -18,14 +16,14 @@ android {
     }
 
     namespace 'com.example.DailyDiary'
-    compileSdk 33
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.mydiary.diary.diarywithlock.secretdiary.personaldiary.easynote.privatejournal.dailydiary"
         minSdk 21
-        targetSdk 33
-        versionCode 16
-        versionName "1.2"
+        targetSdk 35
+        versionCode 18
+        versionName "1.0.3"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -62,6 +60,7 @@ android {
             firebaseCrashlytics {
                 mappingFileUploadEnabled true
             }
+
         }
 
         debug {
@@ -100,47 +99,43 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
-    }
     viewBinding {
         enabled = true
     }
     kapt {
         generateStubs = true
     }
+    buildFeatures{
+        buildConfig(true)
+    }
 
 }
-//apply plugin: "kotlin-kapt"
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.10.1'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.4'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.4'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation project(path: ':KamaiPro')
-
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
     //Room DataBase
-    implementation 'androidx.room:room-runtime:2.5.1'
-    kapt 'androidx.room:room-compiler:2.5.1'
-    implementation "androidx.room:room-ktx:2.5.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    implementation 'androidx.room:room-runtime:2.6.1'
+    kapt 'androidx.room:room-compiler:2.6.1'
+    implementation "androidx.room:room-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.8.7"
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.15.1'
@@ -150,23 +145,20 @@ dependencies {
     implementation 'androidx.biometric:biometric:1.1.0'
 
     //lottie
-    implementation 'com.airbnb.android:lottie:4.2.2'
+    implementation 'com.airbnb.android:lottie:6.0.0'
 
-    // Declare the dependencies for the Remote Config and Analytics libraries
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation platform('com.google.firebase:firebase-bom:33.6.0')
     implementation 'com.google.firebase:firebase-config-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-messaging-ktx'
     implementation 'com.google.firebase:firebase-core:21.1.1'
+
     //localize
     implementation('com.akexorcist:localization:1.2.11') {
         exclude group: 'androidx.core', module: 'core'
     }
-
     // UICam
     implementation 'com.uxcam:uxcam:3.6.2'
-
 
 }
